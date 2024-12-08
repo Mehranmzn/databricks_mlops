@@ -1,0 +1,25 @@
+columns:
+  - name: Time
+    type: datetime
+  - name: Date
+    type: datetime
+  - name: Sender_account
+    type: int64
+  - name: Receiver_account
+    type: int64
+  - name: Amount
+    type: float64
+  - name: Payment_currency
+    type: string
+  - name: Received_currency
+    type: object
+  - name: Sender_bank_location
+    type: object
+  - name: Receiver_bank_location
+    type: object
+  - name: Payment_type
+    type: object
+  - name: Is_laundering
+    type: int64
+  - name: Laundering_type
+    type: object

@@ -9,8 +9,9 @@ pandas = "*"
 numpy = "*"
 kaggle = "*"
 certifi = "*"
-pymongo = {extras = ["srv"], version = "==3.11"}
 scikit-learn = "*"
+pyyaml = "*"
+pymongo = {extras = ["srv"], version = "==3.11"}
 
 [dev-packages]
 
