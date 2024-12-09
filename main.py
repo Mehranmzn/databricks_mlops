@@ -4,7 +4,8 @@ from TransactionMonitoring.components.data_validation import DataValidation
 from TransactionMonitoring.exception.exception import TransactionMonitoringException
 from TransactionMonitoring.logging.logger import logging
 from TransactionMonitoring.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig, DataValidationConfig
-from TransactionMonitoring.entity.config_entity import DataTransformationConfig
+from TransactionMonitoring.entity.config_entity import DataTransformationConfig, ModelTrainerConfig
+from TransactionMonitoring.components.model_trainer import ModelTrainer
 
 if __name__=='__main__':
     try:
@@ -29,6 +30,13 @@ if __name__=='__main__':
         data_transformation_artifact = data_transformation.initiate_data_transformation()
         print(data_transformation_artifact)
         logging.info("Data transformation completed")
+
+        logging.info("Initiating model training")
+        model_trainer_config = ModelTrainerConfig(trainingpuipeline_config)
+        model_trainer = ModelTrainer(model_trainer_config = model_trainer_config, data_transformation_artifact = data_transformation_artifact)
+        model_trainer_artifact = model_trainer.initiate_model_trainer()
+        logging.info("Model training completed")
+
 
     except TransactionMonitoringException as e:
         logging.error(e)

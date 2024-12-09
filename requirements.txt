@@ -8,5 +8,9 @@ kaggle
 pymongo[srv]==3.11
 scikit-learn
 pyyaml
+mlflow
+dagshub
+fastapi
+uvicorn
 
 #-e .

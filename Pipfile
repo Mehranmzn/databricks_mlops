@@ -12,6 +12,8 @@ certifi = "*"
 scikit-learn = "*"
 pyyaml = "*"
 pymongo = {extras = ["srv"], version = "==3.11"}
+mlflow = "*"
+dagshub = "*"
 
 [dev-packages]
 

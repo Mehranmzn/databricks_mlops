@@ -4,10 +4,10 @@ from TransactionMonitoring.exception.exception import TransactionMonitoringExcep
 from TransactionMonitoring.logging.logger import logging
 from TransactionMonitoring.entity.artificat_ent import DataTransformationArtifact,ModelTrainerArtifact
 from TransactionMonitoring.entity.config_entity import ModelTrainerConfig
-from TransactionMonitoring.utils.ml_utils.model.estimator import NetworkModel
+from TransactionMonitoring.utils.ml_utils.model.estimator import TransactionMonitoring
 from TransactionMonitoring.utils.main_utils.utils import save_object,load_object
 from TransactionMonitoring.utils.main_utils.utils import load_numpy_array_data,evaluate_models
-from TransactionMonitoring.utils.ml_utils.metric.classification_metric import get_classification_score
+from TransactionMonitoring.utils.ml_utils.metric.classification_metrics import get_classification_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import r2_score
 from sklearn.neighbors import KNeighborsClassifier
@@ -21,12 +21,7 @@ import mlflow
 from urllib.parse import urlparse
 
 import dagshub
-#dagshub.init(repo_owner='krishnaik06', repo_name='networksecurity', mlflow=True)
-
-os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/mehran1414/tm_data.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"]="mehran1414"
-os.environ["MLFLOW_TRACKING_PASSWORD"]="7104284f1bb44ece21e0e2adb4e36a250ae3251f"
-
+dagshub.init(repo_owner='mehran1414', repo_name='databricks_mlops', mlflow=True)
 
 
 
@@ -131,8 +126,8 @@ class ModelTrainer:
         model_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
         os.makedirs(model_dir_path,exist_ok=True)
 
-        Network_Model=NetworkModel(preprocessor=preprocessor,model=best_model)
-        save_object(self.model_trainer_config.trained_model_file_path,obj=NetworkModel)
+        TM_Model=TransactionMonitoring(preprocessor=preprocessor,model=best_model)
+        save_object(self.model_trainer_config.trained_model_file_path,obj=TransactionMonitoring)
         #model pusher
         save_object("final_model/model.pkl",best_model)
         
