@@ -1,6 +1,6 @@
 # 🚨 Problem Statement & Dataset Description 🚨
 
-![Data Ingestion Pipeline](Assets/Mlops_struc.pdf)
+[Click here to view the full PDF](Assets/Mlops_struc.pdf)
 
 Money laundering remains a major global issue, creating a pressing need for better transaction monitoring solutions. Current anti-money laundering (AML) systems are often ineffective, and access to relevant data is restricted due to legal and privacy concerns. Additionally, available datasets typically lack diversity and true labels. This study introduces a new solution: a **novel AML transaction generator** designed to create the **SAML-D dataset**, offering improved features and typologies. The aim is to support researchers in evaluating their models and developing advanced transaction monitoring techniques. 🔍
 
@@ -74,4 +74,44 @@ The final output of the pipeline consists of several **CSV files**:
 ---
 
 This pipeline ensures the proper preparation, transformation, and storage of data for machine learning tasks, enabling more efficient model training, testing, and evaluation.
+
+## 🔍 Data Validation Pipeline for AML Dataset
+
+![Data Validation Pipeline](Assets/Data Validation.jpg)
+
+The following diagram illustrates the **Data Validation Pipeline** used for ensuring the quality and integrity of the data before it is used for training and testing machine learning models. The pipeline consists of several stages for reading, validating, and logging the dataset to ensure its accuracy.
+
+### 1. **Data Validation Config**
+   - The **Data Validation Config** holds the configuration settings for the data validation process. These settings guide the validation steps for both the training and test datasets.
+
+### 2. **Initiate Validation Pipeline**
+   - Once the configuration is loaded, the **validation pipeline** is initiated, which will then begin the process of validating the data.
+
+### 3. **Read Data**
+   - The pipeline reads the **CSV files** for both **training** and **test datasets** to initiate validation.
+
+### 4. **Validate Numerical Columns**
+   - The pipeline first checks if the **numerical columns** exist in both the training and test datasets. This validation ensures that the required numeric features are available for model training.
+
+### 5. **Check for Missing Columns**
+   - The next step validates whether there are **missing columns** in both the **training** and **test data**. If any required columns are missing, an error is logged.
+
+### 6. **Check for String Values in Numerical Columns**
+   - The pipeline then checks for the presence of **string values in numerical columns**. If any string values are detected in columns that should contain only numerical data, this results in a validation error.
+
+### 7. **Validation Outcome**
+   - If all validation checks pass, the pipeline moves to the **Dataset Drift Detection** stage. If any validation errors are encountered, the pipeline logs a **Validation Error** and halts the process.
+
+### 8. **Detecting Dataset Drift**
+   - After the data passes the validation checks, the pipeline detects **dataset drift**, ensuring that the distribution of data between the training and test datasets remains consistent. If no drift is detected, the data is considered valid for use in training and testing models.
+
+### 9. **Logging**
+   - Throughout the entire process, **logging** occurs at each step, providing valuable insights into any errors or inconsistencies detected in the data. This logging helps in debugging and improving the data validation process.
+
+---
+
+This pipeline ensures that the dataset used for training and testing is valid, well-structured, and free from inconsistencies, thereby enabling more reliable model performance and preventing errors during model training.
+
+
+
 
