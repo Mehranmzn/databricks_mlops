@@ -37,7 +37,7 @@ doi: [10.1109/ICEBE59045.2023.00028](https://ieeexplore.ieee.org/document/103561
 
 ## 🛠 Data Ingestion Pipeline for AML Dataset
 
-![Data Ingestion Pipeline]("Assets/Dataingestion.jpg")
+![Data Ingestion Pipeline](Assets/Dataingestion.jpg)
 The flow diagram below illustrates the **data ingestion pipeline** for processing and preparing the Anti-Money Laundering (AML) dataset. Below is a detailed breakdown of each step in the process:
 
 ### 1. **Config Folder**
