@@ -77,7 +77,8 @@ This pipeline ensures the proper preparation, transformation, and storage of dat
 
 ## 🔍 Data Validation Pipeline for AML Dataset
 
-![Data Validation Pipeline](Assets/Data Validation.jpg)
+
+![Data Validation Pipeline](Assets/DataValidation.jpg)
 
 The following diagram illustrates the **Data Validation Pipeline** used for ensuring the quality and integrity of the data before it is used for training and testing machine learning models. The pipeline consists of several stages for reading, validating, and logging the dataset to ensure its accuracy.
 
