@@ -1,5 +1,7 @@
 # 🚨 Problem Statement & Dataset Description 🚨
 
+![Data Ingestion Pipeline](Assets/Mlops_struc.pdf)
+
 Money laundering remains a major global issue, creating a pressing need for better transaction monitoring solutions. Current anti-money laundering (AML) systems are often ineffective, and access to relevant data is restricted due to legal and privacy concerns. Additionally, available datasets typically lack diversity and true labels. This study introduces a new solution: a **novel AML transaction generator** designed to create the **SAML-D dataset**, offering improved features and typologies. The aim is to support researchers in evaluating their models and developing advanced transaction monitoring techniques. 🔍
 
 The **SAML-D dataset** consists of **12 features** and **28 typologies** (split between 11 normal and 17 suspicious), carefully curated based on existing datasets, academic research, and insights from AML experts. The dataset includes **9,504,852 transactions**, of which only **0.1039%** are flagged as suspicious. Additionally, **15 graphical network structures** are included to visualize the flow of transactions within these typologies. While some of these structures overlap across typologies, they vary in key parameters to increase the complexity and challenge of detecting suspicious behavior. For more details on these typologies, please refer to the paper linked above. This dataset is an updated version compared to the original paper. 📊
